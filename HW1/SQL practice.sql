@@ -150,6 +150,59 @@ alter table practice_birdstrike add weeknumber integer ;
 select state, flight_date from practice_birdstrike where (state='colorado') and (weekofyear(flight_date)=52);
 select current_date();
 select datediff(current_date(),(select flight_date from practice_birdstrike where state='colorado' and weekofyear(flight_date)=52));
+-- sir way of ex 6 
+select datediff (flight_date,now()) from practice_birdstrike where weekofyear(flight_date)=52 and state='Colorado';
+
+
+alter table practice_birdstrike add weeknumber integer;
+alter table practice_birdstrike drop column weeknumber;
+
+select *, weekofyear(flight_date) from practice_birdstrike;
+select *, weekofyear(flight_date) as flight_week from practice_birdstrike;
+
+
+select  aircraft, airline ,speed,
+    if (speed is null or speed<100,'LOW SPEED','HIGH SPEED') as speed_category
+    from practice_birdstrike
+    order by speed_category;
+    
+    SELECT COUNT(*) FROM practice_birdstrike;
+    -- does not count the null values 
+    sELECT COUNT(reported_date) FROM practice_birdstrike;
+    -- gives number of states
+    select count( distinct state) from practice_birdstrike;
+    -- provides the names
+    select distinct state from practice_birdstrike;
+    
+    select count(distinct aircraft) from practice_birdstrike;
+
+select sum(cost) from practice_birdstrike;
+
+select (avg(speed)*1.852) as avg_kmh from practice_birdstrike;
+-- latest reported date 
+select max(reported_date) from practice_birdstrike;
+-- earliest 
+select min(reported_date) from practice_birdstrike;
+
+select datediff(max(reported_date),min(reported_date)) from practice_birdstrike;
+
+select min(speed) from practice_birdstrike where aircraft like 'H%';
+
+select min(speed), aircraft from practice_birdstrike group by aircraft ;
+select min(speed), aircraft from practice_birdstrike where aircraft like 'H%'group by aircraft ;
+
+select state ,aircraft, sum(cost) as sum from practice_birdstrike where state !='' group by aircraft, state order by  sum desc;
+
+select phase_of_flight, count(*) as count from practice_birdstrike group by phase_of_flight order by count asc;
+select phase_of_flight, count(*) as count from practice_birdstrike group by phase_of_flight order by count asc limit 1;
+-- same 
+select phase_of_flight, count(phase_of_flight) as count from practice_birdstrike group by phase_of_flight order by count asc limit 1;
+
+select phase_of_flight, round(avg(cost)) as sum from practice_birdstrike group by phase_of_flight order by sum desc limit 1;
+
+SELECT state,AVG(speed) AS avg_speed  from practice_birdstrike  GROUP BY state HAVING ROUND(avg_speed) = 50;
+
+select state,avg(speed) as avg_speed from practice_birdstrike group by state having length(state)<5 and state !='' order by avg_speed desc limit 1;
 
 
 

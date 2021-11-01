@@ -50,10 +50,10 @@ In the analytical layer one data warehouse is created with relevant columns that
 
 The following are the two data marts which were created:
 
-# 1-	The League-Player Outcome:
+## 1-	The League-Player Outcome:
 In this view the user can extract the lead goal scoring player based on their respective league and the season year. To filter out the result a procedure was applied so that the user can get the outcome based on each league and the year. Moreover, we used aggregation of total goals by player and divided by two since the observation was from both home and away perspective.
 
-# 2-	League Winner View:
+## 2-	League Winner View:
 In this data mart the observation is being filtered to help user to find the league winner in each respective year. Moreover, we later created a procedure for the user where once they enter the season and league, they will be able to extract the league winner. Moreover, while creating the view we assigned label win with 3 points, draws as 1 point & losses as 0 to calculate the aggregated total of each team.
 
 

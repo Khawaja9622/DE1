@@ -13,7 +13,7 @@ As a member of sports magazine’s editing team, I am supposed to perform data a
 My operational layer consists of 7 tables stored in csv -  ranging from team statistics , to game appearance, that happened in years: 2014-2020 The below EER diagrams represent this schema.
 
 
-INSERT PICTURE
+![EER_diagram.png](https://github.com/Khawaja9622/DE1/blob/main/DE1-Project1/EER_diagram.png)
 
 
 In the schema above main analysis are done based on the team statistics, Player appearances & Individual games played by each team.
@@ -34,12 +34,14 @@ My analytics plan is the following:
 3.	Create ETL pipeline to create data marts for the three analytical teams
 This is illustrated in the below figure:
 
-INSERT PICTURE
+![ETL .png](https://github.com/Khawaja9622/DE1/blob/main/DE1-Project1/ETL%20.png)
 
 
 ## Analytical layer
 
 In the analytical layer one data warehouse is created with relevant columns that are required to create the views in the data mart. While creating the layering multiple joins (inner joins, right join & left joins) were used. The purpose of this data warehouse was to display both quantitative and qualitative data with respect to players individual performance and overall, the team performance in that given game. Lastly, the table of shots was dropped to avoid unnecessary data complexity.
+
+![Table.png](https://github.com/Khawaja9622/DE1/blob/main/DE1-Project1/Table.png)
 
 ## Data Mart
 

@@ -8,8 +8,9 @@ It contains all my workfiles used for the Data Engineering 1 Project. The relati
 
 ## Task interpretation :
 As a member of sports magazine’s editing team, I am supposed to perform data analysis and share insights about the European football league for the upcoming blog post. The topics I will be covering will include the following:
-•	emergence of new talent among the lead goal scorers (over the last 7-year period)
-•	top teams in each league during the 7-year period. 
+
+-	Emergence of new talent among the lead goal scorers (over the last 7-year period)
+-	Top teams in each league during the 7-year period. 
 
 ## Operational layer
 My operational layer consists of 7 tables stored in csv -  ranging from team statistics , to game appearance, that happened in years: 2014-2020 The below EER diagrams represent this schema.
